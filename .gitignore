@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 coverage
-=======
 *.gem
 *.rbc
 /.config
@@ -37,4 +35,3 @@ build/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
->>>>>>> fd661c3e2aaaa16f92944328b07304ba68bd7ff2

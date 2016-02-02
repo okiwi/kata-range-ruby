@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # TDD Kit - Ruby [![Travis status]](https://travis-ci.org/arpinum/tdd-kit-ruby)
 
 ## Initialization
@@ -30,6 +29,5 @@
 [Rubocop]: https://github.com/bbatsov/rubocop
 [SimpleCov]: https://github.com/colszowka/simplecov
 [Mocha]: https://github.com/freerange/mocha
-=======
+
 # kata-range-ruby
->>>>>>> fd661c3e2aaaa16f92944328b07304ba68bd7ff2
