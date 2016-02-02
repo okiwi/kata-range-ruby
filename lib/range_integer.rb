@@ -7,6 +7,6 @@ class RangeInteger
   end
 
   def contains?(value)
-    value.between?(@min, @max)  
+    value.between?(@min, @max)
   end
 end
