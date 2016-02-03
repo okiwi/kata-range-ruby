@@ -2,10 +2,9 @@ require_relative './test_helper'
 require_relative './range_integer'
 
 describe RangeInteger do
-  
-  describe "a null range [0,0]" do
+  describe 'a null range [0,0]' do
     before do
-      @null_range = RangeInteger.new("[0,0]")
+      @null_range = RangeInteger.new('[0,0]')
     end
 
     it 'can create a range' do
@@ -21,9 +20,9 @@ describe RangeInteger do
     end
   end
 
-  describe "a range [1,1]" do
+  describe 'a range [1,1]' do
     before do
-      @range = RangeInteger.new("[1,1]")
+      @range = RangeInteger.new('[1,1]')
     end
 
     it 'contains 1' do
@@ -31,9 +30,9 @@ describe RangeInteger do
     end
   end
 
-  describe "a range [1,3]" do
+  describe 'a range [1,3]' do
     before do
-      @range = RangeInteger.new("[1,3]")
+      @range = RangeInteger.new('[1,3]')
     end
 
     it 'does not contain 4' do
@@ -41,9 +40,9 @@ describe RangeInteger do
     end
   end
 
-  describe "a range (1,3]" do
+  describe 'a range (1,3]' do
     before do
-      @range = RangeInteger.new("(1,3]")
+      @range = RangeInteger.new('(1,3]')
     end
 
     it 'does not contain 1' do
@@ -51,14 +50,13 @@ describe RangeInteger do
     end
   end
 
-  describe "a range (1,3)" do
+  describe 'a range (1,3)' do
     before do
-      @range = RangeInteger.new("(1,3)")
+      @range = RangeInteger.new('(1,3)')
     end
 
     it 'does not contain 3' do
       @range.contains?(3).must_equal false
     end
   end
-
 end
