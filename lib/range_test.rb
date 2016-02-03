@@ -2,61 +2,45 @@ require_relative './test_helper'
 require_relative './range_integer'
 
 describe RangeInteger do
+  attr_accessor :range
+
+  def contains(value, ok = true)
+    @range.contains?(value).must_equal ok
+  end
+
+  def doenst_contain(value)
+    contains(value, false)
+  end
+
   describe 'a null range [0,0]' do
-    before do
-      @null_range = RangeInteger.new('[0,0]')
-    end
+    before { @range = RangeInteger.new('[0,0]') }
 
-    it 'can create a range' do
-      @null_range.wont_be_nil
-    end
-
-    it 'contains 0' do
-      @null_range.contains?(0).must_equal true
-    end
-
-    it 'does not contain 1' do
-      @null_range.contains?(1).must_equal false
-    end
+    it('can create a range') { @range.wont_be_nil }
+    it('contains 0') { contains(0) }
+    it('does not contain 1') { doenst_contain(1) }
   end
 
   describe 'a range [1,1]' do
-    before do
-      @range = RangeInteger.new('[1,1]')
-    end
+    before { @range = RangeInteger.new('[1,1]') }
 
-    it 'contains 1' do
-      @range.contains?(1).must_equal true
-    end
+    it('contains 1') { contains(1) }
   end
 
   describe 'a range [1,3]' do
-    before do
-      @range = RangeInteger.new('[1,3]')
-    end
+    before { @range = RangeInteger.new('[1,3]') }
 
-    it 'does not contain 4' do
-      @range.contains?(4).must_equal false
-    end
+    it('does not contain 4') { doenst_contain(4) }
   end
 
   describe 'a range (1,3]' do
-    before do
-      @range = RangeInteger.new('(1,3]')
-    end
+    before { @range = RangeInteger.new('(1,3]') }
 
-    it 'does not contain 1' do
-      @range.contains?(1).must_equal false
-    end
+    it('does not contain 1') { doenst_contain(1) }
   end
 
   describe 'a range (1,3)' do
-    before do
-      @range = RangeInteger.new('(1,3)')
-    end
+    before { @range = RangeInteger.new('(1,3)') }
 
-    it 'does not contain 3' do
-      @range.contains?(3).must_equal false
-    end
+    it('does not contain 3') { doenst_contain(3) }
   end
 end
